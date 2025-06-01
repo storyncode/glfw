@@ -4,8 +4,8 @@ project "GLFW"
 	staticruntime "off"
 	warnings "off"
 
-	targetdir ("bin/" .. OutputDir .. "/%{prj.name}")
-	objdir ("bin-int/" .. OutputDir .. "/%{prj.name}")
+	targetdir ("Binaries/" .. OutputDir .. "/%{prj.name}")
+	objdir ("Binaries/Intermediate/" .. OutputDir .. "/%{prj.name}")
 
 	files
 	{
@@ -93,7 +93,7 @@ project "GLFW"
 		}
 
 		defines 
-		{ 
+		{
 			"_GLFW_WIN32",
 			"_CRT_SECURE_NO_WARNINGS"
 		}
@@ -102,7 +102,7 @@ project "GLFW"
 		runtime "Debug"
 		symbols "on"
 
-	filter { "system:windows", "configurations:Debug-AS" }	
+	filter { "system:windows", "configurations:Debug-AS" }
 		runtime "Debug"
 		symbols "on"
 		sanitize { "Address" }
@@ -112,7 +112,7 @@ project "GLFW"
 		runtime "Release"
 		optimize "speed"
 
-    filter "configurations:Dist"
+		filter "configurations:Dist"
 		runtime "Release"
 		optimize "speed"
-        symbols "off"
+		symbols "off"

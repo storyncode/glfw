@@ -91,5 +91,4 @@ tests/window
 tests/windows
 
 # Hazel-specific
-bin
-bin-int
+Binaries
